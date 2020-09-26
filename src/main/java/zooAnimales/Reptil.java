@@ -8,8 +8,8 @@ public class Reptil extends Animal {
 	public static int serpientes;
 	private String colorEscamas;
 	private int largoCola;
-	Reptil(String n,int e,String h,String g,Zona z, String ce, int lc){
-		super(n,e,h,g,z);
+	public Reptil(String n,int e,String h,String g, String ce, int lc){
+		super(n,e,h,g);
 		colorEscamas=ce;
 		largoCola=lc;
 		listado.add(this);
@@ -32,7 +32,7 @@ public class Reptil extends Animal {
 	public void setLargoCola(int largoCola) {
 		this.largoCola = largoCola;
 	}
-	Reptil(){
+	public Reptil(){
 		
 	}
 	public static int cantidadReptiles() {
@@ -41,12 +41,12 @@ public class Reptil extends Animal {
 	public String movimiento() {
 		return "reptar";
 	}
-	public void crearIguana(String n,int e,String g) {
-		new Reptil(n,e,"humedal",g,null,"verda",3);
+	public static Reptil crearIguana(String n,int e,String g) {
 		iguanas++;
+		return new Reptil(n,e,"humedal",g,"verda",3);
 	}
-	public void crearSerpiente(String n,int e,String g) {
-		new Reptil(n,e,"jungla",g,null,"blanco",1);
+	public static Reptil crearSerpiente(String n,int e,String g) {
 		serpientes++;
+		return new Reptil(n,e,"jungla",g,"blanco",1);
 	}
 }

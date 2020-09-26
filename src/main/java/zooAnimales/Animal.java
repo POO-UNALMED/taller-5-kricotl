@@ -7,21 +7,20 @@ public class Animal {
 	private static int totalAnimales;
 	private String nombre;
 	private int edad;
-	private String habitad;
+	private String habitat;
 	private String genero;
 	private Zona zona;
-	Animal(String n,int e,String h,String g,Zona z){
+	public Animal(String n,int e,String h,String g){
 		nombre=n;
 		edad=e;
-		habitad=h;
+		habitat=h;
 		genero=g;
-		zona=z;
 	}
-	Animal(){
+	public Animal(){
 		
 	}
-	public void totalPorTipo() {
-		System.out.println("Mamiferos: "+zooAnimales.Mamifero.cantidadMamiferos()+"\n"
+	public static String totalPorTipo() {
+		return ("Mamiferos: "+zooAnimales.Mamifero.cantidadMamiferos()+"\n"
 				+ "Aves: "+ zooAnimales.Ave.cantidadAves() + "\n"
 				+ "Reptiles: "+ zooAnimales.Reptil.cantidadReptiles() + "\n"
 				+ "Peces: "+ zooAnimales.Pez.cantidadPeces() + "\n"
@@ -48,11 +47,11 @@ public class Animal {
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
-	public String getHabitad() {
-		return habitad;
+	public String getHabitat() {
+		return habitat;
 	}
-	public void setHabitad(String habitad) {
-		this.habitad = habitad;
+	public void setHabitat(String habitad) {
+		this.habitat = habitad;
 	}
 	public String getGenero() {
 		return genero;
@@ -68,10 +67,10 @@ public class Animal {
 	}
 	public String toString() {
 		if (this.zona==null) {
-			return "Mi nombre es "+this.nombre+", tengo una edad de "+this.edad+", habito en "+this.habitad+" y mi genero es "+this.genero;
+			return "Mi nombre es "+this.nombre+", tengo una edad de "+this.edad+", habito en "+this.habitat+" y mi genero es "+this.genero;
 		}
 		else {
-			return "Mi nombre es "+this.nombre+", tengo una edad de "+this.edad+", habito en "+this.habitad+" y mi genero es "+this.genero+", la zona en la que me ubico es "+this.zona+", en el "+this.zona.getZoo();
+			return "Mi nombre es "+this.nombre+", tengo una edad de "+this.edad+", habito en "+this.habitat+" y mi genero es "+this.genero+", la zona en la que me ubico es "+this.zona+", en el "+this.zona.getZoo();
 		}
 	}
 

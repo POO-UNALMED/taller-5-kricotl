@@ -3,11 +3,10 @@ import java.util.*;
 public class Zoologico {
 	private String nombre;
 	private String ubicacion;
-	private List<Zona> zonas= new ArrayList<Zona>();
-	Zoologico(String n,String u, List<Zona> z){
+	private List<Zona> zona= new ArrayList<Zona>();
+	public Zoologico(String n,String u){
 		nombre=n;
 		ubicacion=u;
-		zonas=z;
 	}
 	public String getNombre() {
 		return nombre;
@@ -21,22 +20,22 @@ public class Zoologico {
 	public void setUbicacion(String ubicacion) {
 		this.ubicacion = ubicacion;
 	}
-	public List<Zona> getZonas() {
-		return zonas;
+	public List<Zona> getZona() {
+		return zona;
 	}
-	public void setZonas(List<Zona> zonas) {
-		this.zonas = zonas;
+	public void setZona(List<Zona> zona) {
+		this.zona = zona;
 	}
-	Zoologico(){
+	public Zoologico(){
 		
 	}
 	public void agregarZonas(Zona z) {
-		zonas.add(z);
+		zona.add(z);
 	}
 	public int cantidadTotalAnimales() {
 		int total=0;
-		for (int i=0; i<zonas.size();i++) {
-			Zona z= zonas.get(i);
+		for (int i=0; i<zona.size();i++) {
+			Zona z= zona.get(i);
 			total+= z.cantidadAnimales();
 		}
 		return total;

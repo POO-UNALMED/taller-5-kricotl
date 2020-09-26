@@ -7,12 +7,12 @@ public class Ave extends Animal {
 	public static int halcones;
 	public static int aguilas;
 	private String colorPlumas;
-	Ave(String n,int e,String h,String g,Zona z, String c){
-		super(n,e,h,g,z);
+	public Ave(String n,int e,String h,String g, String c){
+		super(n,e,h,g);
 		colorPlumas=c;
 		listado.add(this);
 	}
-	Ave(){
+	public Ave(){
 		
 	}
 	public static int cantidadAves() {
@@ -21,13 +21,13 @@ public class Ave extends Animal {
 	public String movimiento() {
 		return "volar";
 	}
-	public void crearHalcon(String n,int e,String g) {
-		new Ave(n,e,"montañas",g,null,"cafe glorioso");
+	public static Ave crearHalcon(String n,int e,String g) {
 		halcones++;
+		return new Ave(n,e,"montañas",g,"cafe glorioso");
 	}
-	public void crearAguila(String n,int e,String g) {
-		new Ave(n,e,"montanas",g,null,"blanco y amarillo");
+	public static Ave crearAguila(String n,int e,String g) {
 		aguilas++;
+		return new Ave(n,e,"montanas",g,"blanco y amarillo");
 	}
 	public static List<Ave> getListado() {
 		return listado;

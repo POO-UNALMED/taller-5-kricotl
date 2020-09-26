@@ -8,13 +8,13 @@ public class Anfibio extends Animal {
 	public static int salamandras;
 	private String colorPiel;
 	private boolean venenoso;
-	Anfibio(String n,int e,String h,String g,Zona z, String c,boolean v){
-		super(n,e,h,g,z);
+	public Anfibio(String n,int e,String h,String g, String c,boolean v){
+		super(n,e,h,g);
 		colorPiel=c;
 		venenoso=v;
 		listado.add(this);
 	}
-	Anfibio(){
+	public Anfibio(){
 		
 	}
 	public static int cantidadAnfibios() {
@@ -41,12 +41,12 @@ public class Anfibio extends Animal {
 	public void setVenenoso(boolean venenoso) {
 		this.venenoso = venenoso;
 	}
-	public void crearRana(String n,int e,String g) {
-		new Anfibio(n,e,"salva",g,null,"rojo",true);
+	public static Anfibio crearRana(String n,int e,String g) {
 		ranas++;
+		return new Anfibio(n,e,"salva",g,"rojo",true);
 	}
-	public void crearSalamandra(String n,int e,String g) {
-		new Anfibio(n,e,"salva",g,null,"negro y amarillo",false);
+	public static Anfibio crearSalamandra(String n,int e,String g) {
 		salamandras++;
+		return new Anfibio(n,e,"salva",g,"negro y amarillo",false);
 	}
 }

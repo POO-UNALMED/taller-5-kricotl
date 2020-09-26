@@ -8,8 +8,8 @@ public class Pez extends Animal {
 	public static int bacalaos;
 	private String colorEscamas;
 	private int cantidadAletas;
-	Pez(String n,int e,String h,String g,Zona z, String ce,int ca){
-		super(n,e,h,g,z);
+	public Pez(String n,int e,String h,String g, String ce,int ca){
+		super(n,e,h,g);
 		colorEscamas=ce;
 		cantidadAletas=ca;
 		listado.add(this);
@@ -32,7 +32,7 @@ public class Pez extends Animal {
 	public void setCantidadAletas(int cantidadAletas) {
 		this.cantidadAletas = cantidadAletas;
 	}
-	Pez(){
+	public Pez(){
 		
 	}
 	public static int cantidadPeces() {
@@ -41,12 +41,12 @@ public class Pez extends Animal {
 	public String movimiento() {
 		return "nadar";
 	}
-	public void crearSalmon(String n,int e,String g) {
-		new Pez(n,e,"oceano",g,null,"rojo",6);
+	public static Pez crearSalmon(String n,int e,String g) {
 		salmones++;
-	}
-	public void crearBacalao(String n,int e,String g) {
-		new Pez(n,e,"oceano",g,null,"gris",6);
+		return new Pez(n,e,"oceano",g,"rojo",6);
+		}
+	public static Pez crearBacalao(String n,int e,String g) {
 		bacalaos++;
+		return new Pez(n,e,"oceano",g,"gris",6);
 	}
 }

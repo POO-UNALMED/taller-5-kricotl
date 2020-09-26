@@ -8,25 +8,25 @@ public class Mamifero extends Animal {
 	public static int leones;
 	private boolean pelaje;
 	private int patas;
-	Mamifero(String n,int e,String h,String g,Zona z, boolean pe,int pa){
-		super(n,e,h,g,z);
+	public Mamifero(String n,int e,String h,String g, boolean pe,int pa){
+		super(n,e,h,g);
 		pelaje=pe;
 		patas=pa;
 		listado.add(this);
 	}
-	Mamifero(){
+	public Mamifero(){
 		
 	}
 	public static int cantidadMamiferos() {
 		return listado.size();
 	}
-	public void crearCaballo(String n,int e,String g) {
-		new Mamifero(n,e,"pradera",g,null,true,4);
+	public static Mamifero crearCaballo(String n,int e,String g) {
 		caballos++;
-	}
-	public void crearLeon(String n,int e,String g) {
-		new Mamifero(n,e,"selva",g,null,true,4);
+		return new Mamifero(n,e,"pradera",g,true,4);
+		}
+	public static Mamifero crearLeon(String n,int e,String g) {
 		leones++;
+		return new Mamifero(n,e,"selva",g,true,4);
 	}
 	public static List<Mamifero> getListado() {
 		return listado;

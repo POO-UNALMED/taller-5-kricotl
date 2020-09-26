@@ -6,10 +6,9 @@ public class Zona {
 	private String nombre;
 	private Zoologico zoo;
 	private List<Animal> animales= new ArrayList<Animal>();
-	Zona(String n,Zoologico z,List<Animal> a){
+	public Zona(String n,Zoologico z){
 		nombre=n;
 		zoo=z;
-		animales=a;
 	}
 	public Zona(){
 		
