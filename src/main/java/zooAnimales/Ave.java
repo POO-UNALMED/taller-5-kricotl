@@ -13,6 +13,7 @@ public class Ave extends Animal {
 		listado.add(this);
 	}
 	public Ave(){
+		listado.add(this);
 		
 	}
 	public static int cantidadAves() {
