@@ -20,11 +20,11 @@ public class Animal {
 		
 	}
 	public static String totalPorTipo() {
-		return "Mamiferos: "+zooAnimales.Mamifero.cantidadMamiferos()+"\n"
-				+ "Aves: "+ zooAnimales.Ave.cantidadAves() + "\n"
-				+ "Reptiles: "+ zooAnimales.Reptil.cantidadReptiles() + "\n"
-				+ "Peces: "+ zooAnimales.Pez.cantidadPeces() + "\n"
-				+ "Anfibios: "+ zooAnimales.Anfibio.cantidadAnfibios();
+		return "Mamiferos: "+ Mamifero.cantidadMamiferos()+"\n"
+				+ "Aves: "+ Ave.cantidadAves() + "\n"
+				+ "Reptiles: "+ Reptil.cantidadReptiles() + "\n"
+				+ "Peces: "+ Pez.cantidadPeces() + "\n"
+				+ "Anfibios: "+ Anfibio.cantidadAnfibios();
 	}
 	public String movimiento() {
 		return "desplazarse";
